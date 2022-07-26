@@ -43,6 +43,7 @@ int main(int argc, char *argv[]) {
   }
 
   int menu_choice = 1;
+  printf ("Enter menu choice: ");
   scanf("%d", &menu_choice);
 
   if (menu_choice != 0 && menu_choice != 1) {
@@ -52,15 +53,15 @@ int main(int argc, char *argv[]) {
 
   if (menu_choice == 0) {
     if (confirm("Are you sure you want to wipe the drive?")) {
-      if (verbose) {
-        printf("working... (Use -v to see progress)\n");
-        if (write_zeros_512_verbose(argv[1]) == 0) {
+      if (verbose == 1 ) {
+        printf("Writing 0s to %s\n", argv[2]);
+        if (write_zeros_512_verbose(argv[2]) == 0) {
           printf("Wipe successful.\n");
         } else {
           printf("Wipe failed.\n");
         }
       } else {
-        printf("working... (Use -v to see progress)\n");
+         printf("Writing 0s to %s (Use -v to see progress)\n", argv[1]);
         if (write_zeros_512(argv[1]) == 0) {
           printf("Wipe successful.\n");
         } else {
