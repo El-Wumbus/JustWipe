@@ -1,7 +1,0 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory '/mnt/starship-vault/documents/Git/JustWipe'
-rm -rf build
-mkdir -p build
-gcc -Wall -Werror -o build/jwipe src/drive.c src/main.c
-make: Leaving directory '/mnt/starship-vault/documents/Git/JustWipe'
- 
